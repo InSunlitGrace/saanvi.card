@@ -29,17 +29,36 @@
     </div>
     
     <script>
-        // Generate confetti
+        // Enhanced confetti generator
         function createConfetti() {
-            for (let i = 0; i < 50; i++) {
+            const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#D8A7B1'];
+            const shapes = ['❄', '✦', '❉', '✧', '✺']; // Different confetti shapes
+            
+            for (let i = 0; i < 100; i++) { // Increased number of particles
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 10 + 'vw';
-                confetti.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
-                confetti.style.width = Math.random() * 10 + 5 + 'px';
-                confetti.style.height = Math.random() * 10 + 5 + 'px';
-                confetti.style.animationDuration = Math.random() * 3 + 3 + 's';
-                confetti.style.animationDelay = Math.random() * 2 + 's';
+                
+                // Position adjustments
+                confetti.style.left = Math.random() * 100 + 'vw'; // Full width coverage
+                confetti.style.top = Math.random() * -100 + 'vh'; // Start above viewport
+                
+                // Random shape or colored square
+                if (Math.random() > 0.5) {
+                    confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                    confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                    confetti.style.background = 'transparent';
+                } else {
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                }
+                
+                // Animation properties
+                confetti.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Longer duration
+                confetti.style.animationDelay = (Math.random() * 3) + 's';
+                confetti.style.animationName = Math.random() > 0.5 ? 'confetti-fall' : 'confetti-spiral';
+                
                 document.body.appendChild(confetti);
             }
         }
