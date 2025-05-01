@@ -91,16 +91,35 @@ sup {
     color: var(--dusty-pink);
 }
 
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: var(--gold);
-    opacity: 0;
-    animation: confetti 5s linear infinite;
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-@keyframes confetti {
-    0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+@keyframes confetti-spiral {
+    0% {
+        transform: translateY(-100px) rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    will-change: transform;
+    border-radius: 2px;
 }
