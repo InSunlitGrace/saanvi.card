@@ -16,7 +16,8 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to flex-start */
+    padding-top: 80px; /* Added top padding */
     overflow-x: hidden;
 }
 
@@ -35,24 +36,10 @@ body {
     animation: float 6s ease-in-out infinite;
     position: relative;
     overflow: hidden;
+    margin-top: 40px; /* Additional margin */
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-        var(--neon-pink), 
-        var(--neon-blue), 
-        var(--neon-purple));
-    z-index: -1;
-    border-radius: 25px;
-    animation: borderGlow 3s linear infinite;
-}
-
+/* ... (rest of your existing CSS remains unchanged) ... */
 @keyframes borderGlow {
     0% { filter: blur(5px); opacity: 0.7; }
     50% { filter: blur(7px); opacity: 1; }
