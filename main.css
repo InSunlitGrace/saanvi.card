@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 60px;
+    padding: 20px;
     overflow-x: hidden;
     background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -30,13 +30,13 @@ body {
     backdrop-filter: blur(8px);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(44, 62, 80, 0.1);
-    padding: 40px 35px;
-    width: 85%;
+    padding: 30px 25px;
+    width: 100%;
     max-width: 550px;
     border: 1px solid rgba(139, 120, 109, 0.3);
     position: relative;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .card::before {
@@ -45,16 +45,16 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 8px;
+    height: 6px;
     background: linear-gradient(90deg, var(--pine-green), var(--sky-blue));
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
     color: var(--deep-water);
-    font-size: 3.2rem;
-    margin: 0 0 15px;
-    letter-spacing: 1px;
+    font-size: 2.2rem;
+    margin: 0 0 10px;
+    letter-spacing: 0.5px;
     font-weight: 700;
 }
 
@@ -64,39 +64,39 @@ sup {
 }
 
 .nature-divider {
-    width: 150px;
-    margin: 25px auto;
+    width: 120px;
+    margin: 20px auto;
     opacity: 0.8;
 }
 
 .message {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin: 30px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 25px 0;
     font-weight: 500;
     color: #2C3E50;
 }
 
 .message p {
-    margin: 20px 0;
+    margin: 15px 0;
     position: relative;
 }
 
 .message p::before {
     content: "❦";
     position: absolute;
-    left: -28px;
+    left: -22px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--pine-green);
     opacity: 0.7;
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
 .signature {
     font-style: italic;
-    margin-top: 40px;
-    font-size: 1.2rem;
+    margin-top: 30px;
+    font-size: 1.1rem;
     color: var(--wood-brown);
 }
 
@@ -132,7 +132,7 @@ sup {
     animation-iteration-count: 1;
     will-change: transform;
     border-radius: 50%;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 /* Subtle snow overlay for Nordic feel */
@@ -150,4 +150,43 @@ body::after {
     pointer-events: none;
     opacity: 0.2;
     z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .card {
+        padding: 40px 35px;
+        margin-top: 30px;
+    }
+    
+    h1 {
+        font-size: 3.2rem;
+        margin: 0 0 15px;
+        letter-spacing: 1px;
+    }
+    
+    .nature-divider {
+        width: 150px;
+        margin: 25px auto;
+    }
+    
+    .message {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin: 30px 0;
+    }
+    
+    .message p {
+        margin: 20px 0;
+    }
+    
+    .message p::before {
+        left: -28px;
+        font-size: 1.1em;
+    }
+    
+    .signature {
+        margin-top: 40px;
+        font-size: 1.2rem;
+    }
 }
