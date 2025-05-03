@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Main Content -->
     <div class="card">
         <h1>Happy 18<sup>th</sup> Birthday</h1>
         
@@ -29,6 +35,20 @@
     </div>
 
     <script>
+        // First show loading screen
+        document.querySelector('.loading-screen').style.display = 'flex';
+        
+        // After everything loads, hide loading screen and show content
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(function() {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                    createNatureParticles();
+                }, 500); // Match this with CSS transition time
+            }, 1500); // Minimum loading screen display time
+        });
+
         // Nature-themed particle generator (falling leaves)
         function createNatureParticles() {
             const colors = ['#5E8C61', '#8B786D', '#C8C8A9', '#7A9CC6', '#4A6670'];
@@ -61,8 +81,6 @@
                 document.body.appendChild(particle);
             }
         }
-        
-        window.onload = createNatureParticles;
     </script>
 </body>
 </html>
