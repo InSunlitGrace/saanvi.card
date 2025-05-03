@@ -7,7 +7,7 @@
     --snow: #F0F4F7;
 }
 
-/* Loading Screen Styles */
+/* Loading Screen */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -36,18 +36,23 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Main Content Styles */
+/* Main Content */
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     background: linear-gradient(135deg, #E8F0F2, #D4E6E8);
     color: #2C3E50;
-    min-height: 100vh;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
     overflow-x: hidden;
     background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -67,14 +72,7 @@ body {
     position: relative;
     overflow: hidden;
     margin-top: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-body.loaded .card {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .card::before {
@@ -173,7 +171,7 @@ sup {
     font-size: 1rem;
 }
 
-/* Subtle snow overlay for Nordic feel */
+/* Subtle snow overlay */
 body::after {
     content: "";
     position: fixed;
