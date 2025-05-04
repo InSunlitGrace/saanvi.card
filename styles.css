@@ -135,7 +135,14 @@ sup {
     font-size: 1.1rem;
     color: var(--wood-brown);
 }
-
+.spotify-container {
+    margin-top: 80px;  /* Large margin between card and player */
+    padding: 0 20px;  /* Some side padding */
+    max-width: 600px;  /* Reasonable max width */
+    width: 100%;
+    margin-left: auto;
+     margin-right: auto;
+}
 /* Nature particle animations */
 @keyframes particle-fall {
     0% {
