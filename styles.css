@@ -40,11 +40,13 @@
 .content {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column; /* Changed from default row to column */
+    justify-content: flex-start; /* Align items at the top */
+    align-items: center; /* Center items horizontally */
     padding: 20px;
     min-height: 100vh;
     box-sizing: border-box;
+    gap: 40px; /* Adds consistent spacing between card and spotify container */
 }
 
 body {
@@ -136,12 +138,10 @@ sup {
     color: var(--wood-brown);
 }
 .spotify-container {
-    margin-top: 80px;  /* Large margin between card and player */
-    padding: 0 20px;  /* Some side padding */
-    max-width: 600px;  /* Reasonable max width */
+    margin-top: 0; /* Remove the large top margin since we're using gap */
+    padding: 0 20px;
+    max-width: 550px; /* Match card width */
     width: 100%;
-    margin-left: auto;
-     margin-right: auto;
 }
 /* Nature particle animations */
 @keyframes particle-fall {
@@ -197,6 +197,10 @@ body::after {
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
+    .content {
+        gap: 60px; /* Increase gap on larger screens */
+    }
+
     .card {
         padding: 40px 35px;
         margin-top: 30px;
@@ -231,5 +235,8 @@ body::after {
     .signature {
         margin-top: 40px;
         font-size: 1.2rem;
+    }
+    .spotify-container {
+        max-width: 600px; /* Slightly wider on desktop */
     }
 }
