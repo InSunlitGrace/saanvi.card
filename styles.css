@@ -1,404 +1,503 @@
 :root {
-    --pine-green: #5E8C61;
-    --wood-brown: #8B786D;
-    --lichen: #C8C8A9;
-    --sky-blue: #7A9CC6;
-    --deep-water: #4A6670;
-    --snow: #F0F4F7;
+	--pine-green: #5E8C61;
+	--wood-brown: #8B786D;
+	--lichen: #C8C8A9;
+	--sky-blue: #7A9CC6;
+	--deep-water: #4A6670;
+	--snow: #F0F4F7;
 }
 
 /* Loading Screen */
 .loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	transition: opacity 0.5s ease;
 }
 
 .loader {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid var(--pine-green);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+	border: 5px solid #f3f3f3;
+	border-top: 5px solid var(--pine-green);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /* Main Content */
 .content {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Changed from default row to column */
-    justify-content: flex-start; /* Align items at the top */
-    align-items: center; /* Center items horizontally */
-    padding: 20px;
-    min-height: 100vh;
-    box-sizing: border-box;
-    gap: 40px; /* Adds consistent spacing between card and spotify container */
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	/* Changed from default row to column */
+	justify-content: flex-start;
+	/* Align items at the top */
+	align-items: center;
+	/* Center items horizontally */
+	padding: 20px;
+	min-height: 100vh;
+	box-sizing: border-box;
+	gap: 40px;
+	/* Adds consistent spacing between card and spotify container */
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #E8F0F2, #D4E6E8);
-    color: #2C3E50;
-    margin: 0;
-    overflow-x: hidden;
-    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	background: linear-gradient(135deg, #E8F0F2, #D4E6E8);
+	color: #2C3E50;
+	margin: 0;
+	overflow-x: hidden;
+	background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: overlay;
 }
 
 .card {
-    background: rgba(240, 244, 247, 0.85);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.1);
-    padding: 30px 25px;
-    width: 100%;
-    max-width: 550px;
-    border: 1px solid rgba(139, 120, 109, 0.3);
-    position: relative;
-    overflow: hidden;
-    margin-top: 20px;
-    opacity: 1;
+	background: rgba(240, 244, 247, 0.85);
+	backdrop-filter: blur(8px);
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(44, 62, 80, 0.1);
+	padding: 30px 25px;
+	width: 100%;
+	max-width: 550px;
+	border: 1px solid rgba(139, 120, 109, 0.3);
+	position: relative;
+	overflow: hidden;
+	margin-top: 20px;
+	opacity: 1;
 }
 
 .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--pine-green), var(--sky-blue));
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 6px;
+	background: linear-gradient(90deg, var(--pine-green), var(--sky-blue));
 }
 
 h1 {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--deep-water);
-    font-size: 2.2rem;
-    margin: 0 0 10px;
-    letter-spacing: 0.5px;
-    font-weight: 700;
+	font-family: 'Cormorant Garamond', serif;
+	color: var(--deep-water);
+	font-size: 2.2rem;
+	margin: 0 0 10px;
+	letter-spacing: 0.5px;
+	font-weight: 700;
 }
 
 sup {
-    font-size: 0.6em;
-    color: var(--pine-green);
+	font-size: 0.6em;
+	color: var(--pine-green);
 }
 
 .nature-divider {
-    width: 120px;
-    margin: 20px auto;
-    opacity: 0.8;
+	width: 120px;
+	margin: 20px auto;
+	opacity: 0.8;
 }
 
 .message {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 25px 0;
-    font-weight: 500;
-    color: #2C3E50;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 25px 0;
+	font-weight: 500;
+	color: #2C3E50;
 }
 
 .message p {
-    margin: 15px 0;
-    position: relative;
+	margin: 15px 0;
+	position: relative;
 }
 
 .message p::before {
-    content: "❦";
-    position: absolute;
-    left: -22px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--pine-green);
-    opacity: 0.7;
-    font-size: 0.9em;
+	content: "❦";
+	position: absolute;
+	left: -22px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--pine-green);
+	opacity: 0.7;
+	font-size: 0.9em;
 }
 
 .signature {
-    font-style: italic;
-    margin-top: 30px;
-    font-size: 1.1rem;
-    color: var(--wood-brown);
+	font-style: italic;
+	margin-top: 30px;
+	font-size: 1.1rem;
+	color: var(--wood-brown);
 }
+
 .spotify-container {
-    margin-top: 0; /* Remove the large top margin since we're using gap */
-    padding: 0 20px;
-    max-width: 550px; /* Match card width */
-    width: 100%;
+	margin-top: 0;
+	/* Remove the large top margin since we're using gap */
+	padding: 0 20px;
+	max-width: 550px;
+	/* Match card width */
+	width: 100%;
 }
+
 /* Nature particle animations */
 @keyframes particle-fall {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(120vh) rotate(360deg);
-        opacity: 0;
-    }
+	0% {
+		transform: translateY(-100px) rotate(0deg);
+		opacity: 0.8;
+	}
+
+	100% {
+		transform: translateY(120vh) rotate(360deg);
+		opacity: 0;
+	}
 }
 
 @keyframes particle-drift {
-    0% {
-        transform: translateY(-100px) rotate(0deg) translateX(0);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(120vh) rotate(180deg) translateX(100px);
-        opacity: 0;
-    }
+	0% {
+		transform: translateY(-100px) rotate(0deg) translateX(0);
+		opacity: 0.8;
+	}
+
+	100% {
+		transform: translateY(120vh) rotate(180deg) translateX(100px);
+		opacity: 0;
+	}
 }
 
 .nature-particle {
-    position: absolute;
-    opacity: 0;
-    z-index: 9999;
-    pointer-events: none;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-    will-change: transform;
-    border-radius: 50%;
-    font-size: 1rem;
+	position: absolute;
+	opacity: 0;
+	z-index: 9999;
+	pointer-events: none;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	will-change: transform;
+	border-radius: 50%;
+	font-size: 1rem;
 }
 
 /* Subtle snow overlay */
 body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(rgba(240, 244, 247, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(240, 244, 247, 0.1) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    opacity: 0.2;
-    z-index: -1;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background:
+		linear-gradient(rgba(240, 244, 247, 0.1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(240, 244, 247, 0.1) 1px, transparent 1px);
+	background-size: 60px 60px;
+	pointer-events: none;
+	opacity: 0.2;
+	z-index: -1;
 }
+
 /* Realistic Cloud Animation */
 .cloud-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: -1;
+	pointer-events: none;
 }
 
 .cloud {
-  position: absolute;
-  background: white;
-  border-radius: 1000px;
-  filter: blur(20px);
-  opacity: 0.6;
+	position: absolute;
+	background: white;
+	border-radius: 1000px;
+	filter: blur(20px);
+	opacity: 0.6;
 }
 
 /* Cloud shapes made with multiple circles */
-.cloud:before, .cloud:after {
-  content: '';
-  position: absolute;
-  background: white;
-  border-radius: 50%;
+.cloud:before,
+.cloud:after {
+	content: '';
+	position: absolute;
+	background: white;
+	border-radius: 50%;
 }
 
 /* Individual cloud styles */
 .cloud-1 {
-  width: 250px;
-  height: 80px;
-  top: 20%;
-  left: -300px;
-  animation: cloud-flow 45s linear infinite;
+	width: 250px;
+	height: 80px;
+	top: 20%;
+	left: -300px;
+	animation: cloud-flow 45s linear infinite;
 }
+
 .cloud-1:before {
-  width: 90px;
-  height: 90px;
-  top: -40px;
-  left: 30px;
+	width: 90px;
+	height: 90px;
+	top: -40px;
+	left: 30px;
 }
+
 .cloud-1:after {
-  width: 70px;
-  height: 70px;
-  top: -30px;
-  right: 30px;
+	width: 70px;
+	height: 70px;
+	top: -30px;
+	right: 30px;
 }
 
 .cloud-2 {
-  width: 350px;
-  height: 120px;
-  top: 30%;
-  left: -500px;
-  animation: cloud-flow 60s linear infinite;
-  animation-delay: 5s;
-  opacity: 0.5;
+	width: 350px;
+	height: 120px;
+	top: 30%;
+	left: -500px;
+	animation: cloud-flow 60s linear infinite;
+	animation-delay: 5s;
+	opacity: 0.5;
 }
+
 .cloud-2:before {
-  width: 120px;
-  height: 120px;
-  top: -50px;
-  left: 40px;
+	width: 120px;
+	height: 120px;
+	top: -50px;
+	left: 40px;
 }
+
 .cloud-2:after {
-  width: 80px;
-  height: 80px;
-  top: -30px;
-  right: 50px;
+	width: 80px;
+	height: 80px;
+	top: -30px;
+	right: 50px;
 }
 
 .cloud-3 {
-  width: 200px;
-  height: 60px;
-  top: 50%;
-  left: -250px;
-  animation: cloud-flow 40s linear infinite;
-  animation-delay: 10s;
-  opacity: 0.7;
+	width: 200px;
+	height: 60px;
+	top: 50%;
+	left: -250px;
+	animation: cloud-flow 40s linear infinite;
+	animation-delay: 10s;
+	opacity: 0.7;
 }
+
 .cloud-3:before {
-  width: 70px;
-  height: 70px;
-  top: -30px;
-  left: 20px;
+	width: 70px;
+	height: 70px;
+	top: -30px;
+	left: 20px;
 }
+
 .cloud-3:after {
-  width: 50px;
-  height: 50px;
-  top: -20px;
-  right: 20px;
+	width: 50px;
+	height: 50px;
+	top: -20px;
+	right: 20px;
 }
 
 .cloud-4 {
-  width: 300px;
-  height: 100px;
-  top: 65%;
-  left: -400px;
-  animation: cloud-flow 50s linear infinite;
-  animation-delay: 15s;
-  opacity: 0.4;
+	width: 300px;
+	height: 100px;
+	top: 65%;
+	left: -400px;
+	animation: cloud-flow 50s linear infinite;
+	animation-delay: 15s;
+	opacity: 0.4;
 }
+
 .cloud-4:before {
-  width: 100px;
-  height: 100px;
-  top: -40px;
-  left: 30px;
+	width: 100px;
+	height: 100px;
+	top: -40px;
+	left: 30px;
 }
+
 .cloud-4:after {
-  width: 60px;
-  height: 60px;
-  top: -20px;
-  right: 40px;
+	width: 60px;
+	height: 60px;
+	top: -20px;
+	right: 40px;
 }
 
 .cloud-5 {
-  width: 180px;
-  height: 50px;
-  top: 40%;
-  left: -200px;
-  animation: cloud-flow 35s linear infinite;
-  animation-delay: 20s;
-  opacity: 0.8;
+	width: 180px;
+	height: 50px;
+	top: 40%;
+	left: -200px;
+	animation: cloud-flow 35s linear infinite;
+	animation-delay: 20s;
+	opacity: 0.8;
 }
+
 .cloud-5:before {
-  width: 60px;
-  height: 60px;
-  top: -25px;
-  left: 15px;
+	width: 60px;
+	height: 60px;
+	top: -25px;
+	left: 15px;
 }
 
 .cloud-6 {
-  width: 400px;
-  height: 150px;
-  top: 15%;
-  left: -500px;
-  animation: cloud-flow 70s linear infinite;
-  animation-delay: 25s;
-  opacity: 0.3;
+	width: 400px;
+	height: 150px;
+	top: 15%;
+	left: -500px;
+	animation: cloud-flow 70s linear infinite;
+	animation-delay: 25s;
+	opacity: 0.3;
 }
+
 .cloud-6:before {
-  width: 150px;
-  height: 150px;
-  top: -60px;
-  left: 50px;
+	width: 150px;
+	height: 150px;
+	top: -60px;
+	left: 50px;
 }
+
 .cloud-6:after {
-  width: 100px;
-  height: 100px;
-  top: -40px;
-  right: 60px;
+	width: 100px;
+	height: 100px;
+	top: -40px;
+	right: 60px;
 }
 
 @keyframes cloud-flow {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(100vw + 500px));
-  }
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(100vw + 500px));
+	}
 }
 
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
-    .content {
-        gap: 60px; /* Increase gap on larger screens */
-    }
+	.content {
+		gap: 60px;
+		/* Increase gap on larger screens */
+	}
 
-    .card {
-        padding: 40px 35px;
-        margin-top: 30px;
-    }
-    
-    h1 {
-        font-size: 3.2rem;
-        margin: 0 0 15px;
-        letter-spacing: 1px;
-    }
-    
-    .nature-divider {
-        width: 150px;
-        margin: 25px auto;
-    }
-    
-    .message {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        margin: 30px 0;
-    }
-    
-    .message p {
-        margin: 20px 0;
-    }
-    
-    .message p::before {
-        left: -28px;
-        font-size: 1.1em;
-    }
-    
-    .signature {
-        margin-top: 40px;
-        font-size: 1.2rem;
-    }
-    .spotify-container {
-        max-width: 600px; /* Slightly wider on desktop */
-    }
+	.card {
+		padding: 40px 35px;
+		margin-top: 30px;
+	}
+
+	h1 {
+		font-size: 3.2rem;
+		margin: 0 0 15px;
+		letter-spacing: 1px;
+	}
+
+	.nature-divider {
+		width: 150px;
+		margin: 25px auto;
+	}
+
+	.message {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		margin: 30px 0;
+	}
+
+	.message p {
+		margin: 20px 0;
+	}
+
+	.message p::before {
+		left: -28px;
+		font-size: 1.1em;
+	}
+
+	/* Nature-themed Button */
+	.button-container {
+		margin: 30px 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.nature-button {
+		position: relative;
+		background: rgba(94, 140, 97, 0.85);
+		/* pine green with transparency */
+		backdrop-filter: blur(4px);
+		border: 1px solid rgba(139, 120, 109, 0.3);
+		/* wood brown border */
+		color: #F0F4F7;
+		/* snow text */
+		padding: 12px 24px;
+		border-radius: 50px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		box-shadow: 0 4px 15px rgba(74, 102, 112, 0.15);
+		overflow: hidden;
+	}
+
+	.nature-button::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(240, 244, 247, 0.2), transparent);
+		transition: 0.5s;
+	}
+
+	.nature-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(74, 102, 112, 0.25);
+		background: rgba(94, 140, 97, 0.95);
+	}
+
+	.nature-button:hover::before {
+		left: 100%;
+	}
+
+	.button-icon {
+		transition: transform 0.3s ease;
+	}
+
+	.nature-button:hover .button-icon {
+		transform: rotate(360deg);
+	}
+
+	/* Responsive adjustment */
+	@media (min-width: 768px) {
+		.nature-button {
+			padding: 14px 28px;
+			font-size: 1.1rem;
+		}
+	}
+
+	.signature {
+		margin-top: 40px;
+		font-size: 1.2rem;
+	}
+
+	.spotify-container {
+		max-width: 600px;
+		/* Slightly wider on desktop */
+	}
 }
