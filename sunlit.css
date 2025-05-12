@@ -1,0 +1,150 @@
+:root {
+    /* Dramatic Light Palette */
+    --gold-flame: #FFD700;
+    --blade-amber: #FF8C00;
+    --scorched-crimson: #E25822;
+    --dying-embers: #FF4500;
+    --twilight-murk: #4B3621;
+    --ash-grey: #8B8378;
+    --parchment: #F5EED3;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--parchment);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Golden hour beach background */
+    background: 
+        linear-gradient(rgba(94, 52, 21, 0.3), rgba(184, 98, 27, 0.4)),
+        url('https://images.unsplash.com/photo-1439405326854-014607f694d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')
+;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+}
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--twilight-murk);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+.sun-loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--gold-flame);
+    border-top-color: var(--scorched-crimson);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    box-shadow: 0 0 20px var(--dying-embers);
+}
+
+.loading-text {
+    margin-top: 20px;
+    color: var(--gold-flame);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    text-shadow: 0 0 8px var(--dying-embers);
+}
+
+.sun-card {
+    background: rgba(75, 54, 33, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 
+        0 0 30px rgba(226, 88, 34, 0.5),
+        inset 0 0 10px var(--gold-flame);
+    border: 1px solid var(--blade-amber);
+    margin: 40px 0;
+}
+
+.sun-header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    margin: 0 0 10px;
+    color: var(--gold-flame);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(226, 88, 34, 0.5);
+}
+
+.sun-divider {
+    width: 120px;
+    margin: 15px auto;
+    opacity: 0.7;
+}
+
+.sun-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+
+.stanza-spacer {
+    height: 1.5rem;
+}
+
+.gold-verse {
+    color: var(--gold-flame);
+    font-weight: 600;
+}
+
+.amber-verse {
+    color: var(--blade-amber);
+}
+
+.crimson-verse {
+    color: var(--scorched-crimson);
+    font-style: italic;
+}
+
+.flame-verse {
+    color: var(--dying-embers);
+    font-weight: 600;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .sun-message {
+        font-size: 1rem;
+    }
+    
+    .sun-card {
+        padding: 30px 20px;
+    }
+    
+    .stanza-spacer {
+        height: 1rem;
+    }
+}
