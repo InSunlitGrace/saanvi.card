@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Sunlit Grace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#E8A87C">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#E8A87C">
+    <link rel="stylesheet" href="sunlit.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="sun-loader"></div>
+        <p class="loading-text">Kindling the light...</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="sunlit-content">
+        <div class="sun-card">
+            <div class="sun-header">
+                <h1>In Sunlit Grace</h1>
+                <svg class="sun-divider" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,5 Q25,0 50,5 T100,5" stroke="#E8A87C" fill="none" stroke-width="1.5"/>
+                </svg>
+            </div>
+            
+            <div class="sun-message">
+                <p class="gold-verse">There was a light once—not the kind</p>
+                <p class="gold-verse">that coaxes flowers from the earth,</p>
+                <p class="amber-verse">nor some frail dawn, soft and resigned,</p>
+                <p class="amber-verse">but light that knew its worth.</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="crimson-verse">It cut through lies like a naked blade,</p>
+                <p class="crimson-verse">left no shadow room to plead,</p>
+                <p class="flame-verse">scorched the meek where they prayed,</p>
+                <p class="flame-verse">and named the rot beneath the green.</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="gold-verse">Men called it cruel. Too bright, they said.</p>
+                <p class="gold-verse">Too sharp. Too much. They turned their faces,</p>
+                <p class="amber-verse">let the dimness grow instead,</p>
+                <p class="amber-verse">let the twilight mask the traces</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="crimson-verse">of all they feared to see unmade.</p>
+                <p class="crimson-verse">And so it died—not with a sigh,</p>
+                <p class="flame-verse">but like a king in ambush laid</p>
+                <p class="flame-verse">low by those who feared the sky.</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="gold-verse">Now the dark is thick with whispers,</p>
+                <p class="gold-verse">thick with hands that clutch and smother.</p>
+                <p class="amber-verse">You will miss the light that blistered,</p>
+                <p class="amber-verse">when the hush eats up another</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="crimson-verse">truth. Another voice. Another name.</p>
+                <p class="crimson-verse">You will beg for fire.</p>
+                <p class="flame-verse">But dead light does not rise again—</p>
+                <p class="flame-verse">only ash. Only pyres.</p>
+                
+                <div class="stanza-spacer"></div>
+                
+                <p class="gold-verse">Heed this, then, before the end:</p>
+                <p class="gold-verse">a world that kills its brightest flame</p>
+                <p class="amber-verse">does not fade. It does not bend.</p>
+                <p class="amber-verse">It drowns. And it deserves the same.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
